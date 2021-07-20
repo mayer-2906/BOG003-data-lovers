@@ -1,8 +1,10 @@
 import pokemon from './data/pokemon/pokemon.js';
+import data from './data.js';
 // import data from './data/lol/lol.js';
 //import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
-const listaDePokemon=pokemon;
+const listaDePokemon=pokemon,
+      bontonCargarPoke=document.querySelector("#buttonCargarPokemom");
 let cantidadDePokemonesMostrados=0;
 
 /* console.log(typeof(listaDePokemon)); 
@@ -25,7 +27,7 @@ let pokemonSize= function(){
     for(let i=0;i<listaDePokemon.pokemon.length;i++){
         poke=listaDePokemon.pokemon[i];
         /*console.log(`numero: ${poke.num} nombre: ${poke.name} altura: ${poke.size.height}`);-*/
-        console.log(poke);
+        /*console.log(poke);*/
         /*console.table(poke);*/
         /*console.log(poke.size.height);*/
         let alt=poke.size.height.replace(/[a-z]|[\s]/mg,"");
@@ -41,48 +43,111 @@ let pokemonSize= function(){
     return pokemones;
 }
 
-/* console.table(pokemonSize()) */
+/*FUNCION PARA ORDENAR LOS POKEMONES POR EL MAS PESADO*/
+let ordenPesoMayorAMenor=()=>{
+
+    let pokemonesMayorAMenor=new  Array();
+    pokemonesMayorAMenor =[...listaDePokemon.pokemon];
+    //return pokemonesMayorAMenor.sort(function(a,b){return (Number(b.size.weight.replace(/[a-z]|[\s]/mg,""))-Number(a.size.weight.replace(/[a-z]|[\s]/mg,"")))});
+    pokemonesMayorAMenor.sort(function(a,b){return (Number(b.size.weight.replace(/[a-z]|[\s]/mg,""))-Number(a.size.weight.replace(/[a-z]|[\s]/mg,"")))});
+    let pokemonesOrdenados=new Array(Object);
+    for(let i=0;i<pokemonesMayorAMenor.length-1;i++){
+        let poke={
+            
+            /* let {num, name, size.weight}=pokemonesMayorAMenor[1]; */
+            
+            numero: pokemonesMayorAMenor[i].num,
+            nombre: pokemonesMayorAMenor[i].name,
+            peso: pokemonesMayorAMenor[i].size.weight
+        }
+        pokemonesOrdenados.push(poke);
+    }
+    return pokemonesOrdenados;
+}
+
+/**voy a intentar crear u objeto y agregarle atributos */
+
+console.table(ordenPesoMayorAMenor());
+ 
+/* console.table(pokemonSize())
 /* Funcion para filtrar los pokemon por type, caso de ejemplo grass */
-let pokemonForType=()=>{
+/* let pokemonForType=()=>{
     /*let poke=new Object();*/
-    let pokemones=new Array();
-    listaDePokemon.pokemon.forEach(Element=>{
+    /* let pokemones=listaDePokemon.pokemon.filter(poke=>poke.type.filter(tipo=>tipo=="fire")=="fire"); 
+    let pokemones=listaDePokemon.pokemon.filter(poke=>poke.type.includes("fire"));
+
+    /* listaDePokemon.pokemon.forEach(Element=>{
         for(let i=0;i<Element.type.length;i++){
-            if(Element.type[i]=="grass"){
+            if(Element.type[i]=="fire"){
                 pokemones.push(Element);
                 console.log(Element);
             }
         }        
-    })
+    }) 
     return pokemones;
     
-}
-
-/* console.table(pokemonForType()); */
+} */
+/*buscar para hacerlo con el metodo includes */
+/* console.table(pokemonForType());  */
 
 window.addEventListener('Load',cargarPokemones());
 
+bontonCargarPoke.addEventListener('click', () =>{
+    if(cantidadDePokemonesMostrados<250)
+        cargarPokemones();
+});
+
 function cargarPokemones(){
 
-    for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+250;i+=3){
+    let pokemonAgregado=0;
+    for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+30;i+=3){
         /*crea una fila de tarjetas */
         let fila=document.createElement("div");
         fila.classList.add("filaPokemon");
         for(let j=0;j<3;j++){
             fila.appendChild(crearTarjeta(listaDePokemon.pokemon[i+j]));
-            /*cantidadDePokemonesMostrados++;*/
+            pokemonAgregado++;
         }
         document.querySelector("#contenedor_Pokemones").appendChild(fila);
     }
-    /*cantidadDePokemonesMostrados+=30;*/
+    cantidadDePokemonesMostrados+=pokemonAgregado;
 }
+
+
 
 /* 
 function crearfila(){
 } */
 
+/* function crearTarjeta(pokeTarj){
+
+    /* let nuevoPokemonTarjeta=[pokeTarj.name,pokeTarj.img,pokeTarj.type,pokeTarj.resistant];
+    let divTarjeta=document.createElement("div");
+    divTarjeta.classList.add("tarjetaPokemon");
+    let imgPokemon=document.createElement("img");
+    imgPokemon.classList.add("img_Pokemon");
+    imgPokemon.src=pokeTarj.img;
+    let nombrePokemon=document.createElement("p");
+    nombrePokemon.classList.add("nombre_pokemon");
+    nombrePokemon.textContent=`${pokeTarj.name}`;
+    let parrafoTarjeta=document.createElement("p");
+    parrafoTarjeta.classList.add("tipo_pokemon");
+    parrafoTarjeta.textContent=`Tipo:  ${obtenerType(pokeTarj.type)}`;
+    let parrafoResist=document.createElement("p");
+    parrafoResist.classList.add("resistencia_pokemon");
+    parrafoResist.textContent=` Resistencia:  ${obtenerResistencia(pokeTarj.resistant)}`
+    divTarjeta.appendChild(imgPokemon);
+    divTarjeta.insertAdjacentElement("afterbegin",nombrePokemon);
+    divTarjeta.insertAdjacentElement("beforeend",parrafoTarjeta);
+    divTarjeta.insertAdjacentElement("beforeend",parrafoResist);
+
+    return divTarjeta;
+    /* console.table(nuevoPokemonTarjeta); 
+} */
+/*Intentaremos hacer una tarjeta trasera para al dar click rote 180 grados y muestre los datos del pokemon */
 function crearTarjeta(pokeTarj){
 
+    /* let contenedorFichaPokemon=document.createElement("DIV");     */
     /* let nuevoPokemonTarjeta=[pokeTarj.name,pokeTarj.img,pokeTarj.type,pokeTarj.resistant];*/
     let divTarjeta=document.createElement("div");
     divTarjeta.classList.add("tarjetaPokemon");
@@ -117,12 +182,12 @@ function obtenerType(tipo){
 function obtenerResistencia(resist){
     let resistencias="";
     for(let i=0;i<resist.length;i++){
-        resistencias=`${resist[i]}  ${resistencias} `;
+        resistencias=`${resist[i]},  ${resistencias} `;
     }
     return resistencias;
 }
 
-console.log(crearTarjeta(listaDePokemon.pokemon[3]));
+/*console.log(crearTarjeta(listaDePokemon.pokemon[3]));*/
 
 
 
