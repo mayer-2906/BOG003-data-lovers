@@ -99,9 +99,9 @@ bontonCargarPoke.addEventListener('click', () =>{
 
 function cargarPokemones(){
 
-    let pokemonAgregado=0;
+    /* let pokemonAgregado=0;
     for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+30;i+=3){
-        /*crea una fila de tarjetas */
+        /*crea una fila de tarjetas *//*
         let fila=document.createElement("div");
         fila.classList.add("filaPokemon");
         for(let j=0;j<3;j++){
@@ -109,6 +109,14 @@ function cargarPokemones(){
             pokemonAgregado++;
         }
         document.querySelector("#contenedor_Pokemones").appendChild(fila);
+    }
+    cantidadDePokemonesMostrados+=pokemonAgregado; */
+    let pokemonAgregado=0;
+    for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+10;i++){
+        if(i<listaDePokemon.pokemon.length){
+            document.querySelector("#contenedorPokemones").appendChild(crearTarjeta(listaDePokemon.pokemon[i]));
+            pokemonAgregado++;
+        }
     }
     cantidadDePokemonesMostrados+=pokemonAgregado;
 }
