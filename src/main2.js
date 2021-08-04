@@ -2,6 +2,7 @@ import pokemon from './data/pokemon/pokemon.js';
 
 const listaDePokemon=pokemon,
       bontonCargarPoke=document.querySelector("#buttonCargarPokemom");
+      
 let cantidadDePokemonesMostrados=0;
 
 window.addEventListener('Load',cargarPokemones());
@@ -66,4 +67,7 @@ function obtenerResistencia(resist){
     }
     return resistencias;
 }
+
+
+
 

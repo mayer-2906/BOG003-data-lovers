@@ -1,0 +1,194 @@
+:root{
+
+    --plum:rgb(221,160,221);
+    --likeBlue:rgb(135,206,250);
+    --primario: #69FFEB;
+    --letra: #000224;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --amarillo: #FAFF7E;
+
+    
+
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.contenedor-select{
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 20px;
+    color: var(--letra);
+}
+
+.contenedor-select label{
+    padding: 10px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:600;
+    text-transform: capitalize;
+    
+
+}
+
+.contenedor-select select{
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:400;
+    text-transform: capitalize;
+    background: var(--primario);
+
+}
+
+.contenedor-select option{
+
+    padding: 10px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:400;
+    text-transform: capitalize;
+    border-bottom: 2px solid #ffffff;
+    cursor: pointer;
+}
+
+.botonEstadistica{
+
+    width: 80px;
+    height: 50px;
+    padding: 5px;
+    background: url("./img/search-negro.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    border: none;
+    cursor:pointer
+    
+}
+
+
+.contenedor-tarjeta{
+
+    width: 280px;
+    margin: auto;
+    padding: 10px 5px;
+	max-width: 280px;
+	position: relative;
+	color: #fff;
+	transition: .3s ease all;
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	cursor: pointer;
+}
+
+.contenedor-tarjeta:hover{
+    transform: rotateY(180deg);
+}
+
+.contenedor-tarjeta>div{
+    padding: 5px;
+	border-radius: 15px;
+	min-height: 315px;
+	box-shadow: 0 12px 30px rgb(0, 0, 0, 7);
+}
+
+.tarjetaPokemon{
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    cursor: pointer;
+    background: linear-gradient(45deg,var(--likeBlue),var(--plum));
+    position: relative;
+    
+
+}
+
+
+.trasera{
+
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 12px 30px rgb(0, 0, 0, 7);
+    cursor: pointer;
+    background: linear-gradient(45deg,var(--likeBlue),var(--plum));
+    position: absolute;
+	top: 0;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+
+}
+.tipo_pokemon{
+    margin: auto;
+    font-size: 18px;
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-weight: bold;
+    color:var(--letra);
+    text-transform: capitalize;
+    grid-column: 1/3;
+
+}
+
+.resistencia_pokemon{
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: var(--letra);
+    text-transform: capitalize;
+    grid-column: 1/3;
+
+}
+
+.stats{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap:20px;
+
+}
+
+.div-stats{
+    width: 30px;
+    max-width: 60px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+.textLabel{
+    width: 100%;
+    margin: auto;
+    display: block;
+    padding: 0;
+    color: var(--letra);
+    font-weight: 600;
+    font-size: larger;
+}
+
+.valoresStas{
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 0;
+    color: rgba(0, 0, 255, 0.89);
+    font-weight: 600;
+    font-size: larger;
+}

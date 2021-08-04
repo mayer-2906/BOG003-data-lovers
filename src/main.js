@@ -1,9 +1,6 @@
-import pokemon from './data/pokemon/pokemon.js';
-import data from './data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-const listaDePokemon=pokemon,
+//import pokemon from './data/pokemon/pokemon.js';
+//import data from './data.js';
+//const listaDePokemon=pokemon,
       bontonCargarPoke=document.querySelector("#buttonCargarPokemom");
 let cantidadDePokemonesMostrados=0;
 

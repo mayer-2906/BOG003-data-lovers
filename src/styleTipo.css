@@ -1,0 +1,155 @@
+:root{
+
+    --plum:rgb(221,160,221);
+    --likeBlue:rgb(135,206,250);
+    --primario: #69FFEB;
+    --letra: #000224;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --amarillo: #FAFF7E;
+}
+
+
+.contenedor-pokemon{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.menu-tipo{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.label-menu{
+
+    width: 100%;
+    margin-top: 0;
+    display: block;
+    margin: auto;
+}
+
+.label-tipo{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--letra);
+
+}
+
+.div-button-tipo{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.div-button-tipo > input{
+    width: 100px;
+    height: 60px;
+    font-family: 'Amiri', serif;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 12px 5px rgb(0, 0, 0, 7);
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+#bug{
+    background: rgba(12, 133, 12,0.8);
+}
+
+#steel{
+    background: rgb(165, 164, 164);
+}
+
+#water{
+    background: rgb(0, 195, 255);
+}
+
+#dragon{
+    background: linear-gradient(180deg,rgb(236, 132, 132),rgb(78, 78, 228));
+}
+
+#electric{
+    background: rgb(175, 175, 67);
+}
+
+#ghost{
+    background: rgba(109, 2, 151, 0.74);
+}
+
+#fire{
+    background: rgb(248, 106, 55);
+}
+
+#fairy{
+    background: rgb(221, 170, 204);
+}
+
+#ice{
+    background: rgb(91, 211, 241);
+}
+
+#fighting{
+    background: rgb(177, 58, 15);
+}
+
+#normal{
+    background: grey;
+}
+
+#grass{
+    background: rgba(146, 233, 129, 0.884);
+}
+
+#psychic{
+    background: rgb(248, 99, 216);
+}
+
+#rock{
+    background: rgba(131, 103, 26, 0.856);
+}
+
+#dark{
+    background: rgba(126, 125, 125, 0.445);
+}
+
+#ground{
+    background: linear-gradient(180deg,rgb(197, 187, 44),rgb(122, 248, 122));
+}
+
+#poison{
+    background: rgba(226, 132, 250, 0.788);
+}
+
+#flying{
+    background: linear-gradient(180deg,rgb(96, 188, 250),rgb(209, 208, 208));
+}
+
+.contenedor-pokemones{
+    margin-top: 40px;
+}
+
+#limpiar{
+    width: 250px;
+    height: 60px;
+    margin: auto;
+    font-family: 'Amiri', serif;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgb(0, 0, 0, 7);
+    margin-top: 30px;
+    background: var(--primario);
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+    <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="styleTipo.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-texto">
+        <img id="logo" src="https://fontmeme.com/permalink/210715/10ca2a393eab02469d67854a3f33fbd9.png" alt="POKEMANIA">
+      </div>
+      <nav class="nav">
+        <a class="nav-enlace" href="./index.html" class="nav-enlace"><img src="./img/icons8-home 1.png" alt="">inicio</a>
+        <a class="nav-enlace" href="https://www.pokemon.com/el/pokedex/" class="nav-enlace"><img src="./img/icons8-pokedex 1.png" alt="">pokedex</a>
+      </nav>
+    </header>
+    <main class="contenedor-principal">
+      <div class="contenedor-menu">
+        <div class="menu">
+          <input type="checkbox" id="btn-menu">
+          <label for="btn-menu"><img src="./img/menu-hamburguesa.png" alt=""></label>
+          <nav class="menu-navegacion" id="menuNavegacion">
+            <ul>
+              <li><a href="*">consultar por:</a></li>
+              <li><a href="consultarEstadisticas.html">estadisticas</a></li>
+              <li><a href="consultarTipo.html">tipo</a></li>
+              <li><a href="consultarPeso.html">peso</a></li>
+              <li><a href="consultarRegion.html">region</a></li>
+              <li><a href="consultarDebilidad.html">debilidad</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="contenedor-pokemon">
+        <div class="menu-tipo">
+            <div class="label-menu">
+                <p class="label-tipo">Filtra los pokemones por tipo, selecciona el tipo que desees:</p>
+            </div>
+            <div class="div-button-tipo">
+                <input type="button" class="input-tipo" value="Bicho" id="bug">
+                <input type="button" class="input-tipo" value="Acero" id="steel">
+                <input type="button" class="input-tipo" value="Agua" id="water">
+                <input type="button" class="input-tipo" value="Dragon" id="dragon">
+                <input type="button" class="input-tipo" value="Elèctrico" id="electric">
+                <input type="button" class="input-tipo" value="Fantasma" id="ghost">
+                <input type="button" class="input-tipo" value="Fuego" id="fire">
+                <input type="button" class="input-tipo" value="Hada" id="fairy">
+                <input type="button" class="input-tipo" value="Hielo" id="ice">
+                <input type="button" class="input-tipo" value="Lucha" id="fighting">
+                <input type="button" class="input-tipo" value="Normal" id="normal">
+                <input type="button" class="input-tipo" value="Planta" id="grass">
+                <input type="button" class="input-tipo" value="Psiquico" id="psychic">
+                <input type="button" class="input-tipo" value="Roca" id="rock">
+                <input type="button" class="input-tipo" value="Siniestro" id="dark">
+                <input type="button" class="input-tipo" value="Tierra" id="ground">
+                <input type="button" class="input-tipo" value="Veneno" id="poison">
+                <input type="button" class="input-tipo" value="Volador" id="flying">
+            </div>
+            <input type="submit" id="limpiar" value="Limpiar filtros">
+        </div>
+        <div class="contenedor-pokemones" id="contenedorPokemones">          
+        </div>
+        <input class="botonCargar" id ="buttonCargarPokemom" type="button" value="Mostrar mas Pokemon" >
+      </div>
+      <aside class="contenedor-curiosidades" >
+        <div class="curiosidades">
+          <p class="aside-historias">Historias curiosas de Pokemon</p>
+          <div class="contenedor-videos">
+            <iframe class="clase-video" width="320" height="240" src="https://www.youtube.com/embed/K1Q6gzLm21o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="clase-video" width="320" height="240" src="https://www.youtube.com/embed/8J5Vi_eCNQA" title="YouTube video player2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="clase-video" width="320" height="240" src="https://www.youtube.com/embed/EpY4l9GdKzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <footer>
+      <div class="pieDePagina">
+        <img class="redes" src="./img/icons8-instagram-48.png" alt="">
+        <img class="redes" src="./img/icons8-facebook-rodeado-de-círculo-48.png" alt="">
+        <img class="redes" src="./img/bxl-twitter.svg" alt="">
+        </div>
+      </div>
+    </footer>
+    
+    <div id="root"></div>
+    <script src="mainTipo.js" type="module"></script>
+  </body>
+</html>
