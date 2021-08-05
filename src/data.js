@@ -6,7 +6,7 @@ export const pokemonForType=(pokemon,tipo)=>{
   
 };
 
-export const cargarPokemones= (cantidadDePokemonesMostrados,pokemon)=>{
+/* export const cargarPokemones= (cantidadDePokemonesMostrados,pokemon)=>{
 
   let pokemonAgregado=0;
     for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+10;i++){
@@ -16,14 +16,14 @@ export const cargarPokemones= (cantidadDePokemonesMostrados,pokemon)=>{
         }
     }
     cantidadDePokemonesMostrados+=pokemonAgregado;
-};
+}; */
 
 export const consultarPokemonPorEstadistica=(pokemones)=>{
 
   pokemones.sort(function(a,b){return (obtenerPromedioEstadistica(b)-obtenerPromedioEstadistica(a))})
-  pokemones.forEach(element => {
-    console.log(element.num+" "+element.name+" "+obtenerPromedioEstadistica(element));
-  }); 
+  //pokemones.forEach(element => {
+  //  //console.log(element.num+" "+element.name+" "+obtenerPromedioEstadistica(element));
+  //}); 
   return pokemones;
 };
 
@@ -32,7 +32,7 @@ export const consultarPokemonPS=(pokemones)=>{
   return pokemones.sort(function(a,b){return (b.stats['base-stamina']-a.stats['base-stamina'])});
 
 }
-
+ 
 export const consultarPokemonPC=(pokemones)=>{
   return pokemones.sort(function(a,b){return (b.stats['max-cp']-a.stats['max-cp'])})
 }
@@ -61,11 +61,35 @@ export const obtenerPromedioEstadistica=(poke)=>{
     return media;
 }
 
+export const sortPeso = (lista,opcion)=>{
+    switch(opcion){
+      case 1:
+         lista.sort(function(a,b){return (b.weight-a.weight)});
+         break;
+      case 2:
+         lista.sort(function(a,b){return (a.weight-b.weight)});
+         break;
+      case 3:
+        lista=lista.filter(pokemon=>pokemon.weight<=300);
+        lista.sort(function(a,b){return (a.weight-b.weight)});
+        break;
+      case 4:
+        lista=lista.filter(pokemon=>(pokemon.weight>300 && pokemon.weight<=600));
+        lista.sort(function(a,b){return (a.weight-b.weight)});
+        break;
+        case 5:
+          lista=lista.filter(pokemon=>pokemon.weight>600);
+          lista.sort(function(a,b){return (a.weight-b.weight)});
+          break; 
+    }
+     return lista;
+}
+/*  
 const data={
 
   /* lista:new Array(), */
   
-  ordenPesoMayorAMenor(){
+ /*  ordenPesoMayorAMenor(){
 
   let pokemonesMayorAMenor=new  Array();
   pokemonesMayorAMenor =lista;
@@ -73,18 +97,10 @@ const data={
   pokemonesMayorAMenor.sort(function(a,b){return (Number(a.size.weight.replace(/[a-z]|[\s]/mg,""))-Number(b.size.weight.replace(/[a-z]|[\s]/mg,"")))});
   let pokemonesOrdenados=new Array(Object);
   for(let i=0;i<pokemonesMayorAMenor.length-1;i++){
-      let poke={
+      let poke={ */
           
           /* let {num, name, size.weight}=pokemonesMayorAMenor[1]; */
           
-          numero: pokemonesMayorAMenor[i].num,
-          nombre: pokemonesMayorAMenor[i].name,
-          peso: pokemonesMayorAMenor[i].size.weight
-      }
-      pokemonesOrdenados.push(poke);
-  }
-  return pokemonesOrdenados;
-  }
-}
+         /* */
 
-export default data;
+//export default data;

@@ -135,6 +135,34 @@
 #flying{
     background: linear-gradient(180deg,rgb(96, 188, 250),rgb(209, 208, 208));
 }
+.porcentajeEstadistica{
+
+    width: 80%;
+    margin-top: 50px;
+    padding: 5px;
+    padding: var(--amarillo);
+    
+}
+
+.datoEstadistico{
+    width: 100%;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--letra);
+    text-transform: capitalize;
+}
+
+.porcentaje{
+    margin-left: 5px;
+    padding: 10px 10px;
+    font-weight:bolder;
+    border: 3px solid white;
+    color: rgba(53, 4, 230, 0.959);
+    border-radius: 15px;
+    font-size: 20px;
+}
 
 .contenedor-pokemones{
     margin-top: 40px;

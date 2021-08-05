@@ -10,13 +10,13 @@ import {obtenerPromedioEstadistica} from './data.js';
 
 const selectOrden=document.querySelector("#orden"),
       contenedorpoke=document.querySelector("#contenedorPokemones"),
-      tarjeta=document.querySelectorAll(".tarjetaPokemon"),
+      //tarjeta=document.querySelectorAll(".tarjetaPokemon"),
       pokemones=pokemon.pokemon;
 
 
 selectOrden.addEventListener("change",(e)=>{
     let opcion=e.target.value;
-    console.log(opcion);
+    //console.log(opcion);
     let listaPokemon=[...pokemones];
     /* listaPokemon.forEach(element=>{
         console.table(element.stats['base-attack'])
@@ -179,7 +179,7 @@ function obtenerType(tipo){
     let tipos="";
     for(let i=0;i<tipo.length;i++){
         tipos=`${tipo[i]}  ${tipos} `;
-        console.log(tipos);
+        //console.log(tipos);
     }
     return tipos;
 }
@@ -191,7 +191,8 @@ function obtenerResistencia(resist){
     }
     return resistencias;
 }
-
+/* 
 function girarTarjeta(e){
     e.classList.toggle("active");
 }
+ */

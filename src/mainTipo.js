@@ -1,8 +1,10 @@
+
 import {obtenerPromedioEstadistica} from './data.js';
 import {pokemonForType} from './data.js';
 
-const bontonCargarPoke=document.querySelector("#buttonCargarPokemom"),
-      filtrarBug=document.getElementById("bug"),
+
+//bontonCargarPoke=document.querySelector("#buttonCargarPokemom"),
+const filtrarBug=document.getElementById("bug"),
       filtrarSteel=document.getElementById("steel"),
       filtrarWater=document.getElementById("water"),
       filtrarDragon=document.getElementById("dragon"),
@@ -23,8 +25,9 @@ const bontonCargarPoke=document.querySelector("#buttonCargarPokemom"),
       limpiarfiltros=document.getElementById("limpiar"),
       contenedorpoke=document.getElementById("contenedorPokemones"); 
      // botonForType=document.querySelector("#cargarTipo");
-let cantidadDePokemonesMostrados=0;
+//let cantidadDePokemonesMostrados=0;
 let pokesFiltrados=null;
+let tiposfiltros="";
 
 
 async function obtenerPokemones(){
@@ -165,8 +168,7 @@ function crearTarjeta(pokeTarj){
 function obtenerType(tipo){
     let tipos="";
     for(let i=0;i<tipo.length;i++){
-        tipos=`${tipo[i]}  ${tipos} `;
-        console.log(tipos);
+        tipos=` ${tipo[i]}  ${tipos} `;
     }
     return tipos;
 }
@@ -180,7 +182,9 @@ function obtenerResistencia(resist){
 }
 
 filtrarBug.addEventListener('click', async () =>{
+
     filtrarBug.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarBug.value;
     limpiarContenedor()
     if(pokesFiltrados==null){
         let lista= await obtenerPokemones();
@@ -191,25 +195,255 @@ filtrarBug.addEventListener('click', async () =>{
         pokesFiltrados=pokemonForType(pokesFiltrados,filtrarBug.id);
         mostrarPokemones(pokesFiltrados);
     }
+
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
 
 });
- /* 
-let filtrar = async () =>{
+//Funcion para calcular el procentaje de pokemones de un tipo
+const mostrarPorcentaje=(dato,tipo)=>{
+
+    let porcentaje=(dato/251)*100;
+    porcentaje=porcentaje.toFixed(2);
+    document.querySelector(".datoEstadistico").innerHTML=`El porcentaje de pokemones de tipo  ${tipo} : es `
+    document.querySelector(".porcentaje").innerHTML=`  ${porcentaje}%`; 
+}
+
+filtrarSteel.addEventListener('click', async () =>{
+    filtrarSteel.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarSteel.value;
     limpiarContenedor()
     if(pokesFiltrados==null){
         let lista= await obtenerPokemones();
-        pokesFiltrados=pokemonForType(lista,filtrarBug.id);
+        pokesFiltrados=pokemonForType(lista,filtrarSteel.id);
         mostrarPokemones(pokesFiltrados)
     }
     else{
-        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarBug.id);
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarSteel.id);
         mostrarPokemones(pokesFiltrados);
     }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
 
-};
- */
+});
+
+
+
+filtrarDragon.addEventListener('click', async () =>{
+    filtrarDragon.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarDragon.value;
+    //console.log(tiposfiltros);
+    limpiarContenedor();
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarDragon.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarDragon.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarElectric.addEventListener('click',async () =>{
+    filtrarElectric.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarElectric.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarElectric.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarElectric.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+
+});
+
+filtrarGhost.addEventListener('click',async () =>{
+    filtrarGhost.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarGhost.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarGhost.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarGhost.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+
+});
+
+filtrarFire.addEventListener('click',async () =>{
+    filtrarFire.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarFire.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarFire.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarFire.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+
+});
+
+filtrarFairy.addEventListener('click',async () =>{
+    filtrarFairy.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarFairy.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarFairy.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarFairy.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+
+});
+
+filtrarIce.addEventListener('click',async () =>{
+    filtrarIce.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarIce.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarIce.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarIce.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarFighting.addEventListener('click',async () =>{
+    filtrarFighting.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarFighting.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarFighting.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarFighting.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarNormal.addEventListener('click',async () =>{
+    filtrarNormal.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarNormal.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarNormal.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarNormal.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+
+});
+
+filtrarPhychic.addEventListener('click',async () =>{
+    filtrarPhychic.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarPhychic.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarPhychic.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarPhychic.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarRock.addEventListener('click',async () =>{
+    filtrarRock.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarRock.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarRock.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarRock.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarDark.addEventListener('click',async () =>{
+    filtrarDark.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarDark.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarDark.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarDark.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarGround.addEventListener('click',async () =>{
+    filtrarGround.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarGround.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarGround.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarGround.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
+filtrarPoison.addEventListener('click',async () =>{
+    filtrarPoison.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarPoison.value;
+    limpiarContenedor()
+    if(pokesFiltrados==null){
+        let lista= await obtenerPokemones();
+        pokesFiltrados=pokemonForType(lista,filtrarPoison.id);
+        mostrarPokemones(pokesFiltrados)
+    }
+    else{
+        pokesFiltrados=pokemonForType(pokesFiltrados,filtrarPoison.id);
+        mostrarPokemones(pokesFiltrados);
+    }
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
+});
+
 filtrarWater.addEventListener('click',async () =>{
     filtrarWater.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarWater.value;
     limpiarContenedor()
     if(pokesFiltrados==null){
         let lista= await obtenerPokemones();
@@ -220,11 +454,12 @@ filtrarWater.addEventListener('click',async () =>{
         pokesFiltrados=pokemonForType(pokesFiltrados,filtrarWater.id);
         mostrarPokemones(pokesFiltrados);
     }
-
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
 });
 
 filtrarGrass.addEventListener('click',async () =>{
     filtrarGrass.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarGrass.value;
     limpiarContenedor()
     if(pokesFiltrados==null){
         let lista= await obtenerPokemones();
@@ -235,11 +470,12 @@ filtrarGrass.addEventListener('click',async () =>{
         pokesFiltrados=pokemonForType(pokesFiltrados,filtrarGrass.id);
         mostrarPokemones(pokesFiltrados);
     }
-
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
 });
 
 filtrarFlying.addEventListener('click',async () =>{
     filtrarFlying.style.border='4px solid blue';
+    tiposfiltros=tiposfiltros+"  "+ filtrarFlying.value;
     limpiarContenedor()
     if(pokesFiltrados==null){
         let lista= await obtenerPokemones();
@@ -250,7 +486,7 @@ filtrarFlying.addEventListener('click',async () =>{
         pokesFiltrados=pokemonForType(pokesFiltrados,filtrarFlying.id);
         mostrarPokemones(pokesFiltrados);
     }
-
+    mostrarPorcentaje(pokesFiltrados.length, tiposfiltros);
 });
 
 function limpiarContenedor(){
@@ -258,6 +494,7 @@ function limpiarContenedor(){
     while(contenedorpoke.firstChild){
         contenedorpoke.removeChild(contenedorpoke.firstChild);
     }
+    
 }
 
 function mostrarPokemones(pokes){
@@ -268,5 +505,8 @@ function mostrarPokemones(pokes){
 
 limpiarfiltros.addEventListener('click', ()=>{
     location.reload(true)
+    //limpiarContenedor();
     pokesFiltrados=null;
 })
+
+

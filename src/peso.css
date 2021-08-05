@@ -1,0 +1,42 @@
+.contenedor-select{
+    margin-top: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 20px;
+    color: var(--letra);
+}
+
+.contenedor-select label{
+    padding: 10px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:600;
+    text-transform: capitalize;
+    
+
+}
+
+.contenedor-select select{
+    margin-left: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:400;
+    text-transform: capitalize;
+    background: var(--primario);
+
+}
+
+.contenedor-select option{
+
+    padding: 10px;
+    font-size: 22px;
+    color: var(--letra);
+    font-weight:400;
+    text-transform: capitalize;
+    border-bottom: 2px solid #ffffff;
+    cursor: pointer;
+}
