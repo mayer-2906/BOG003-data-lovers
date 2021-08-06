@@ -1,10 +1,13 @@
 ///const ListaDePokemones=fetchData();
+//import data from './datosPoke.json';
+//import fs from '../node_modules/fs-extra/lib/index.js';
 
+const bontonCargarPoke = document.getElementById("buttonCargarPokemom");
 
-const bontonCargarPoke=document.getElementById("buttonCargarPokemom"),
-      contenedorpoke=document.querySelector("#contenedorPokemones");
+const  contenedorpoke = document.querySelector("#contenedorPokemones");
       
 let listapokemones=[];
+//let objetoPokemones={};
 let contadorPokemones=0;
 const fetchData = async () =>{
     try {
@@ -26,19 +29,21 @@ const fetchData = async () =>{
             //console.log(newPoke);
             pokemones.push(newPoke);
             listapokemones.push(newPoke);
+           // await modificarJson();
         }
-        //console.table(pokemones);
-
         return pokemones
-        /* pokemones.forEach(element =>{
-            console.log(`Num: ${element.id}Nombre: ${element.name} peso: ${element.weight}`);
-        }) */
-        
     } catch (error) {
         //console.log("no se pudo traer la api");
     }
 }
 
+/* const modificarJson= async()=>{
+    const fs= require('fs-extra');
+    const datos= await fs.readJSON('./datosPoke.json');
+    await fs.writeJSON("./datosPoke.json",{...datos.pokemones,listapokemones});
+  
+}
+ */
 //window.addEventListener('Load', async () =>{
 //    let resolve="";
 //    try {

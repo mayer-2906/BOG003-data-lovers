@@ -1,4 +1,3 @@
-// estas funciones son de ejemplo
 
 export const pokemonForType=(pokemon,tipo)=>{
   let pokemones=pokemon.filter(poke=>poke.type.includes(tipo));
@@ -6,24 +5,11 @@ export const pokemonForType=(pokemon,tipo)=>{
   
 };
 
-/* export const cargarPokemones= (cantidadDePokemonesMostrados,pokemon)=>{
-
-  let pokemonAgregado=0;
-    for(let i=cantidadDePokemonesMostrados;i<cantidadDePokemonesMostrados+10;i++){
-        if(i<pokemon.length){
-            document.querySelector("#contenedorPokemones").appendChild(crearTarjeta(pokemon[i]));
-            pokemonAgregado++;
-        }
-    }
-    cantidadDePokemonesMostrados+=pokemonAgregado;
-}; */
 
 export const consultarPokemonPorEstadistica=(pokemones)=>{
 
   pokemones.sort(function(a,b){return (obtenerPromedioEstadistica(b)-obtenerPromedioEstadistica(a))})
-  //pokemones.forEach(element => {
-  //  //console.log(element.num+" "+element.name+" "+obtenerPromedioEstadistica(element));
-  //}); 
+  
   return pokemones;
 };
 
@@ -44,11 +30,7 @@ export const consutarPokemonAtaque=(pokemones)=>{
 export const consultarPokemonDefensa=(pokemones)=>{
   return pokemones.sort(function(a,b){return (b.stats['base-defense']-a.stats['base-defense'])})
 }
-/*"base-attack": "118",
-      "base-defense": "111",
-      "base-stamina": "128",
-      "max-cp": "1115",
-      "max-hp": "113" */
+
 export const obtenerPromedioEstadistica=(poke)=>{
 
     let baseAt=parseInt(poke.stats['base-attack']);
@@ -84,23 +66,3 @@ export const sortPeso = (lista,opcion)=>{
     }
      return lista;
 }
-/*  
-const data={
-
-  /* lista:new Array(), */
-  
- /*  ordenPesoMayorAMenor(){
-
-  let pokemonesMayorAMenor=new  Array();
-  pokemonesMayorAMenor =lista;
-  //return pokemonesMayorAMenor.sort(function(a,b){return (Number(b.size.weight.replace(/[a-z]|[\s]/mg,""))-Number(a.size.weight.replace(/[a-z]|[\s]/mg,"")))});
-  pokemonesMayorAMenor.sort(function(a,b){return (Number(a.size.weight.replace(/[a-z]|[\s]/mg,""))-Number(b.size.weight.replace(/[a-z]|[\s]/mg,"")))});
-  let pokemonesOrdenados=new Array(Object);
-  for(let i=0;i<pokemonesMayorAMenor.length-1;i++){
-      let poke={ */
-          
-          /* let {num, name, size.weight}=pokemonesMayorAMenor[1]; */
-          
-         /* */
-
-//export default data;
