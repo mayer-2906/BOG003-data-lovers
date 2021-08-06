@@ -52,7 +52,8 @@ bontonCargarPoke.addEventListener('click', async () =>{
     
     //let respuesta="";
     try {
-         await cargarPokemones();
+        bontonCargarPoke.style.display="none";
+        await cargarPokemones();
     } catch (error) {
         //console.log(respuesta);
     }

@@ -277,8 +277,9 @@ body {
     margin-top: 30px;
     margin-bottom: 20px;
     background: var(--likeBlue);
-    border-radius: 5%;
-    box-shadow: 0 12px 30px rgb(0, 0, 0, 7);
+    border-radius: 15px;
+    border:3px double white;
+    box-shadow: 0 12px 5px rgb(0, 0, 0, 2);
     font-size: 20px;
     font-family: 'Amiri', serif;
     font-weight: bolder;
