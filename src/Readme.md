@@ -35,7 +35,18 @@ disqus: hackmd
 
     Cuando quieran participar en batallas pokemon o jugar cartas. 
 
-### **2. Historias de usuario**
+### **2.  Investigacion de UX**
+
+#### **2.1 Consulta a jugadores pokemon**
+
+    Se consulto a los jugadores pokemon sobre cuales eran las caracterisiticas mas importantes para ellos como jugadores, que tipos de datos eran relevantes a la hora de jugar. Se obtuvo informacion sobre los intereses en los tipos de pokemon, las estadisticas, regiones y debilidades, se concluyo que a la hora de jugar estos datos son los que necesitan los jugadores.
+
+    En proximas mejoras se planea cargar todo en un solo html y poder aplicar varios fitros al tiempo, porque los usuarios desean ver por ejemplo: "los pokemones de tipo bicho ordenados de mayor a menor ataque".
+
+#### **2.2 Feedback con compañera**
+
+    En la historia de usuario 1 se recibio consejo de diseño sobre informar mejor al usuario como iban a estar ordenados los pokemon, si de mayor a menor o viceversa, la idea es que el usuario tuviera claro como iba a ordenar los pokemon por lo que se incluyo un mensaje en el select de como se iba a ordenar.
+### **3. Historias de usuario**
 
 #### -  **1º HU : Filtrar los pokemones por Estadisticas.**
 
@@ -108,14 +119,92 @@ disqus: hackmd
 - ✔️7. Debe pasar el testing.
 
 
-### **Diseño de interfaz de usuario**
+### **4. Diseño de interfaz de usuario**
 
 #### **Prototipo de baja fidelidad**
 
 ##### - **Diseño movil**
 
-![img](http://src/DisIntUsu/indexhtml-mobile.jpeg)
+###### - **Index**
+![img](../src/DisIntUsu/indexhtml-mobile.jpeg?raw=true"Index.html")
+###### - **HU 1**
+![img](../src/DisIntUsu/HU1-papel-mobile.jpeg?raw=true"HU1.html")
 
+###### - **HU 2**
+![img](../src/DisIntUsu/HU2-papel-mobile.jpeg?raw=true"Index.html")
+###### - **HU 3**
+![img](../src/DisIntUsu/HU3-papel-mobile.jpeg?raw=true"HU1.html")
 
+##### - **Diseño lapto**
+
+###### - **Index**
+![img](../src/DisIntUsu/indexhtml-papel-lapto.jpeg?raw=true"Index.html")
+###### - **HU 1**
+![img](../src/DisIntUsu/HU1-papel-lapto.jpeg?raw=true"HU1.html")
+
+###### - **HU 2**
+![img](../src/DisIntUsu/HU2-papel-lapto.jpeg?raw=true"Index.html")
+###### - **HU 3**
+![img](../src/DisIntUsu/HU3-papel-lapto.jpeg?raw=true"HU1.html")
+
+#### - **Prototipo de Alta fidelidad**
+
+##### - **Diseño movil**
+
+###### - **Index**
+![img](../src/DisIntUsu/indexhtml.png?raw=true"Index.html")
+###### - **HU 1**
+![img](../src/DisIntUsu/HU1-mobille.png?raw=true"HU1.html")
+![img](../src/DisIntUsu/HU1-1-mobille.png?raw=true"HU1.html")
+
+###### - **HU 2**
+![img](../src/DisIntUsu/HU2-mobille.png?raw=true"Index.html")
+![img](../src/DisIntUsu/HU2-1-mobille.png?raw=true"Index.html")
+
+###### - **HU 3**
+![img](../src/DisIntUsu/HU3-mobille.png?raw=true"HU1.html")
+![img](../src/DisIntUsu/HU3-1-mobille.png?raw=true"HU1.html")
+
+##### - **Diseño para Lapto**
+
+###### - **Index**
+![img](../src/DisIntUsu/indexhtml-lapto.png?raw=true"Index.html")
+###### - **HU 1**
+![img](../src/DisIntUsu/HU1-lapto.png?raw=true"HU1.html")
+
+###### - **HU 2**
+![img](../src/DisIntUsu/HU2-lapto.png?raw=true"Index.html")
+![img](../src/DisIntUsu/HU2-1-lapto.png?raw=true"Index.html")
+###### - **HU 3**
+![img](../src/DisIntUsu/HU3-lapto.png?raw=true"HU1.html")
+![img](../src/DisIntUsu/HU3-1-lapto.png?raw=true"Index.html")
+
+### - **5. Pruebas Unitarias**
+
+Para las pruebas Unitarias (tests) se crearon funciones y su respectiva configuración, asì como tambien datos de pruebas para realizar los test; de tal manera que se ejecutara el test teniendo en cuenta el comando “npm run test”. Se logró superar la cobertura minima del 75% de statements, 72% de functions y  76% de lines, y el 100% de branches.
+
+![img](../src/DisIntUsu/test-1.png?raw=true"Index.html")
+![img](../src/DisIntUsu/test-2.png?raw=true"Index.html")
+
+### - **6. Checklist**
+
+ - ✔️ Usa VanillaJS.
+ - ✔️Pasa linter (npm run pretest)
+ - ✔️Pasa tests (npm test)
+ - ✔️Pruebas unitarias cubren un mínimo del 70% de statements, functions y lines y branches.
+ - ✔️Incluye Definición del producto clara e informativa en README.md.
+ - ✔️Incluye historias de usuario en README.md.
+ - ✔️Incluye sketch de la solución (prototipo de baja fidelidad) en README.md.
+ - ✔️Incluye Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) en README.md.
+ - Incluye link a Zeplin en README.md.
+ - ✔️Incluye el listado de problemas que detectaste a través de tests de - usabilidad en el README.md.
+ - ✔️UI: Muestra lista y/o tabla con datos y/o indicadores.
+ - ✔️UI: Permite ordenar data por uno o más campos (asc y desc).
+ - ✔️UI: Permite filtrar data en base a una condición.
+ - ✔️UI: Es responsive.
+
+###  - **7. Aspectos Generales**
+
+Este proyecto lo realice sola, con la asesoria y direccion de los coachs de Laboratoria, empleando recursos para estudio dispuestos por ellos. El proyecto se desarrolla en 4 sprint. Agradezco la asesoria y direccion del equipo de Laboratoria.
 
 
