@@ -5,7 +5,7 @@
 const bontonCargarPoke = document.getElementById("buttonCargarPokemom");
 
 const  contenedorpoke = document.querySelector("#contenedorPokemones");
-      
+//prueba     
 let listapokemones=[];
 //let objetoPokemones={};
 let contadorPokemones=0;
