@@ -181,10 +181,10 @@ disqus: hackmd
 
 ### - **5. Pruebas Unitarias**
 
-Para las pruebas Unitarias (tests) se crearon funciones y su respectiva configuración, asì como tambien datos de pruebas para realizar los test; de tal manera que se ejecutara el test teniendo en cuenta el comando “npm run test”. Se logró superar la cobertura minima del 75% de statements, 72% de functions y  76% de lines, y el 100% de branches.
+Para las pruebas Unitarias (tests) se crearon funciones y su respectiva configuración, asì como tambien datos de pruebas para realizar los test; de tal manera que se ejecutara el test teniendo en cuenta el comando “npm run test”. Se logró superar la cobertura del 94% de statements, 86% de functions,  100% de lines, y el 100% de branches.
 
 ![img](../src/DisIntUsu/test-1.png?raw=true"Index.html")
-![img](../src/DisIntUsu/test-2.png?raw=true"Index.html")
+![img](../src/DisIntUsu/test-4.png?raw=true"Index.html")
 
 ### - **6. Checklist**
 
