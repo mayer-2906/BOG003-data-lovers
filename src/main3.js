@@ -16,12 +16,9 @@ const selectOrden=document.querySelector("#orden"),
 
 selectOrden.addEventListener("change",(e)=>{
     let opcion=e.target.value;
-    //console.log(opcion);
+    
     let listaPokemon=[...pokemones];
-    /* listaPokemon.forEach(element=>{
-        console.table(element.stats['base-attack'])
-        
-    }) */
+    
     switch(opcion){
 
         case "estadistica": 

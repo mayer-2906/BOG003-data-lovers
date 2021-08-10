@@ -1,5 +1,12 @@
-import { pokemonForType, consultarPokemonPorEstadistica, consultarPokemonPS,consultarPokemonPC, consutarPokemonAtaque, consultarPokemonDefensa, sortPeso } from '../src/data.js';
-  //    } from '../src/data.js';
+import { pokemonForType, 
+        consultarPokemonPorEstadistica, 
+        consultarPokemonPS,
+        consultarPokemonPC, 
+        consutarPokemonAtaque, 
+        consultarPokemonDefensa, 
+        sortPeso,
+        obtenerPromedioEstadistica,
+      } from '../src/data.js';
 const arrayPrueba=[
   {
   "num": "001",
@@ -49,6 +56,75 @@ const arrayPrueba=[
   }
 ];
 
+/* describe('consultarPokemonPorEstadistica',()=>{
+  it('is a function', ()=>{
+    expect(typeof consultarPokemonPorEstadistica).toBe('function')
+  });
+
+const ordStats=[
+  {
+    "num": "011",
+    "name": "metapod",
+    "weight": "85.5",
+    "type": [
+      "water"
+    ],
+    "stats": {
+      "base-attack": "171",
+      "base-defense": "207",
+      "base-stamina": "188",
+      "max-cp": "2466",
+      "max-hp": "160"
+    },
+  },
+  {
+    "num": "033",
+    "name": "nidorino",
+    "weight": "19.5",
+    "type": [
+      "poison"
+    ],
+    "stats": {
+      "base-attack": "137",
+      "base-defense": "111",
+      "base-stamina": "156",
+      "max-cp": "1393",
+      "max-hp": "135"
+    },
+  },
+  {
+    "num": "001",
+    "name": "bulbasaur",
+    "weight": "6.9",
+    "stats": {
+      "base-attack": "118",
+      "base-defense": "111",
+      "base-stamina": "128",
+      "max-cp": "1115",
+      "max-hp": "113"
+    },
+    "type": [
+      "grass",
+      "poison"
+    ],
+  }
+];
+
+  it('returns lista ordenada por stats',()=>{
+    expect(consultarPokemonPorEstadistica(arrayPrueba)).toStrictEqual(ordStats)
+  });
+});
+ */
+describe('obtenerPromedioEstadistica', ()=>{
+  it('is a function',()=>{
+    expect(typeof obtenerPromedioEstadistica).toBe('function')
+  });
+
+  it('return promedio de stats', ()=>{
+    expect(obtenerPromedioEstadistica(arrayPrueba[0])).toStrictEqual(317)
+  });
+});
+
 describe('pokemonForType', () => {
   it('is a function', () => {
     expect(typeof pokemonForType).toBe('function');
@@ -96,6 +172,59 @@ describe('pokemonForType', () => {
   it('is a function', () => {
     expect(typeof consultarPokemonPorEstadistica).toBe('function');
   });
+
+  const ordStats=[
+    {
+      "num": "011",
+      "name": "metapod",
+      "weight": "85.5",
+      "type": [
+        "water"
+      ],
+      "stats": {
+        "base-attack": "171",
+        "base-defense": "207",
+        "base-stamina": "188",
+        "max-cp": "2466",
+        "max-hp": "160"
+      },
+    },
+    {
+      "num": "033",
+      "name": "nidorino",
+      "weight": "19.5",
+      "type": [
+        "poison"
+      ],
+      "stats": {
+        "base-attack": "137",
+        "base-defense": "111",
+        "base-stamina": "156",
+        "max-cp": "1393",
+        "max-hp": "135"
+      },
+    },
+    {
+      "num": "001",
+      "name": "bulbasaur",
+      "weight": "6.9",
+      "stats": {
+        "base-attack": "118",
+        "base-defense": "111",
+        "base-stamina": "128",
+        "max-cp": "1115",
+        "max-hp": "113"
+      },
+      "type": [
+        "grass",
+        "poison"
+      ],
+    }
+  ];
+  
+    it('returns lista ordenada por stats',()=>{
+      expect(consultarPokemonPorEstadistica(arrayPrueba)).toStrictEqual(ordStats)
+    });
 });
 
 describe('consultarPokemonPS', () => {
