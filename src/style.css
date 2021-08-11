@@ -7,10 +7,6 @@
     --blanco: #ffffff;
     --negro: #000000;
     --amarillo: #FAFF7E;
-
-    
-
-
 }
 
 html {
@@ -173,6 +169,21 @@ body {
     font-weight: bolder;
     text-transform: capitalize;
     
+}
+
+.menu-navegacion li input{
+
+    display: block;
+    border: none;
+    background: transparent;
+    margin-left: 3px;
+    padding: 5px;
+    text-decoration: none;
+    color: var(--letra);
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: capitalize;
+
 }
 
 .menu-navegacion li:hover{

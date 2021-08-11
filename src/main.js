@@ -2,7 +2,8 @@
 //import data from './datosPoke.json';
 //import fs from '../node_modules/fs-extra/lib/index.js';
 
-const bontonCargarPoke = document.getElementById("buttonCargarPokemom");
+const bontonCargarPoke = document.getElementById("buttonCargarPokemom"),
+      botonRegion = document.getElementById("botonRegion");
 
 const  contenedorpoke = document.querySelector("#contenedorPokemones");
 //prueba     
@@ -16,7 +17,7 @@ const fetchData = async () =>{
             const respuesta= await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
             const poke= await respuesta.json();
             //console.log(typeof(poke));
-            //console.log(poke);
+            console.log(poke);
             const newPoke={
                 num:poke.id,
                 name:poke.name,
@@ -36,6 +37,20 @@ const fetchData = async () =>{
         //console.log("no se pudo traer la api");
     }
 }
+
+botonRegion.addEventListener('click',()=>{
+    limpiarContenedor();
+
+})
+
+function limpiarContenedor(){
+
+    while(contenedorpoke.firstChild){
+        contenedorpoke.removeChild(contenedorpoke.firstChild);
+    }
+    
+}
+
 
 /* const modificarJson= async()=>{
     const fs= require('fs-extra');
