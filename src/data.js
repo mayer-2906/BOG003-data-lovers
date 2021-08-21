@@ -8,7 +8,7 @@ export const pokemonForType=(pokemon,tipo)=>{
 
 export const consultarPokemonPorEstadistica=(pokemones)=>{
 
-  pokemones.sort(function(a,b){return (obtenerPromedioEstadistica(b)-obtenerPromedioEstadistica(a))})
+  pokemones.sort((a,b)=> (obtenerPromedioEstadistica(b)-obtenerPromedioEstadistica(a)))
   
   return pokemones;
 };

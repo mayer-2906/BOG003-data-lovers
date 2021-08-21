@@ -3,11 +3,15 @@
 //import fs from '../node_modules/fs-extra/lib/index.js';
 
 const bontonCargarPoke = document.getElementById("buttonCargarPokemom");
-
+const buttonPeso=document.getElementById("peso");
 const  contenedorpoke = document.querySelector("#contenedorPokemones");
       
 let listapokemones=[];
 //let objetoPokemones={};
+
+buttonPeso.addEventListener('click',()=>{
+    
+})
 let contadorPokemones=0;
 const fetchData = async () =>{
     try {

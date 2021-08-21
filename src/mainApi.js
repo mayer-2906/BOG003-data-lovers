@@ -62,6 +62,8 @@ bontonCargarPoke.addEventListener('click', async () =>{
 
 selectOrden.addEventListener("change",(e)=>{
     let opcion=e.target.value;
+    console.log(e);
+    console.log(e.target);
     let listaPokemon=[...listapokemones];
     switch(opcion){
 
